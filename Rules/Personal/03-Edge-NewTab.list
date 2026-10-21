@@ -1,0 +1,17 @@
+# PersonaloonRuleset / Rules/Personal/03-Edge-NewTab.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/Microsoft_Edge_NewTab.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN,ntp.msn.com
+DOMAIN,api.msn.com
+DOMAIN,assets.msn.com
+DOMAIN,arc.msn.com
+DOMAIN,c.msn.com
+DOMAIN,srtb.msn.com
+DOMAIN,www.msn.com
+DOMAIN,staticview.msn.com
+DOMAIN,windows.msn.com
+DOMAIN,fd.api.iris.microsoft.com
+DOMAIN,ris.api.iris.microsoft.com
+DOMAIN,img-s-msn-com.akamaized.net
+DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net
