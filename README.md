@@ -70,6 +70,16 @@
 | [08-LAN.list](https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/08-LAN.list) | 常见内网 IP / ULA |
 | [09-CN-GeoIP.list](https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/09-CN-GeoIP.list) | 中国大陆 GEOIP 兜底 |
 
+## 去重和冲突处理
+
+本次除了单个规则集内部的精确重复检查，还核对了 `Personal / Services / Upstream` 文件之间的精确重复域名：
+
+- `hongxingdl.com`：你的个人自定义策略要求**代理**，与上游默认直连冲突；已从上游直连副本移除，保留你的代理优先级。
+- `openkylin.top`：你的 Linux 直连规则已包含，移除上游重复条目。
+- `googleapis.cn` 和 `gstatic.com`：保留 Clash 上游指定代理策略，移除通用 Google 补充集中重复条目。
+
+**说明：** 去重主要针对完全相同的规则。父域与子域覆盖、插件抢先匹配以及不同来源的动态更新，仍需要结合实际 Loon 请求日志继续验证。
+
 ## 可莉规则保留情况
 
 原私人配置中的 11 条可莉远程规则（Twitter、SteamCN、Steam、OpenAI、SpeedtestChina、TikTok、AI、SpeedtestInternational、Netflix、LAN、CN REGION）在新配置中全部保留了**原始来源及策略**，排在 GitHub 规则之后。
