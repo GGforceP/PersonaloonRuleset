@@ -1,0 +1,14 @@
+# PersonaloonRuleset / Rules/Personal/02-Microsoft-Designer.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/Microsoft_Designer.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN-SUFFIX,designer.microsoft.com
+DOMAIN-SUFFIX,designerapp.osi.office.net
+DOMAIN-SUFFIX,designerapp.officeapps.live.com
+DOMAIN-SUFFIX,designerapp.edog.officeapps.live.com
+DOMAIN-SUFFIX,designerappservice.officeapps.live.com
+DOMAIN-SUFFIX,designer.svc.cloud.microsoft
+DOMAIN,aadcdn.msftauth.net
+DOMAIN,res.public.onecdn.static.microsoft
+DOMAIN,createcatalog.public.onecdn.static.microsoft
+DOMAIN,ecs.office.com
