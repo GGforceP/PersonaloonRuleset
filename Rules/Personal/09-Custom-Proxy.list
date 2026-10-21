@@ -1,0 +1,10 @@
+# PersonaloonRuleset / Rules/Personal/09-Custom-Proxy.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/Proxy_Domain.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN-SUFFIX,hongxingdl.com
+DOMAIN-SUFFIX,xn--9kqz23b19z.com
+DOMAIN,services.sheerid.com
+DOMAIN,verify.sheerid.com
+DOMAIN,offers.sheerid.com
+DOMAIN,my.sheerid.com
