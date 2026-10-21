@@ -1,0 +1,10 @@
+# PersonaloonRuleset / Rules/Personal/01-Edge-Copilot.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/Edge_Copilot.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN,edgeservices.bing.com
+DOMAIN,copilot.microsoft.com
+DOMAIN,copilot.cloud.microsoft
+DOMAIN-SUFFIX,copilot.com
+DOMAIN-SUFFIX,copilot.ai
+DOMAIN,location.microsoft.com
