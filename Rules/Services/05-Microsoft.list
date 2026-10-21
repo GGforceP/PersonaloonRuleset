@@ -1,0 +1,11 @@
+# PersonaloonRuleset / Rules/Services/05-Microsoft.list
+# Supplemental categories for features originally using Mihomo GEOSITE.
+# Curated seed list, NOT a full replacement for any GEOSITE database.
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,windows.com
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,bing.com
