@@ -1,0 +1,14 @@
+# PersonaloonRuleset / Rules/Services/07-Streaming.list
+# Supplemental categories for features originally using Mihomo GEOSITE.
+# Curated seed list, NOT a full replacement for any GEOSITE database.
+DOMAIN-SUFFIX,youtube-nocookie.com
+DOMAIN-SUFFIX,disneyplus.com
+DOMAIN-SUFFIX,disney-plus.net
+DOMAIN-SUFFIX,dssott.com
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,ttvnw.net
+DOMAIN-SUFFIX,hbo.com
+DOMAIN-SUFFIX,max.com
+DOMAIN-SUFFIX,primevideo.com
