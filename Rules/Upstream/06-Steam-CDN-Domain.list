@@ -1,0 +1,6 @@
+# PersonaloonRuleset / Rules/Upstream/06-Steam-CDN-Domain.list
+# Attribution: Aethersailor/Custom_OpenClash_Rules, main/rule/Steam_CDN_Domain.yaml
+# Converted from public YAML to Loon syntax. No proxy credentials.
+DOMAIN-SUFFIX,cm.steampowered.com
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+DOMAIN-SUFFIX,steamserver.net
