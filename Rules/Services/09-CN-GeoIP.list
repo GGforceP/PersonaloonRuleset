@@ -1,0 +1,4 @@
+# PersonaloonRuleset / Rules/Services/09-CN-GeoIP.list
+# Supplemental categories for features originally using Mihomo GEOSITE.
+# Curated seed list, NOT a full replacement for any GEOSITE database.
+GEOIP,CN
