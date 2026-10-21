@@ -1,0 +1,172 @@
+# PersonaloonRuleset · Loon 通用配置模板（公开、安全）
+# 基于可莉官方进阶模板，保留其公开基础插件。
+# 私人版另外完整保留用户本机 68 条插件、DNS 和 MitM 证书；该私人配置不得上传。
+# SSID、代理订阅及 MITM 私钥均需本地填入，不可提交至 GitHub。
+# 官方规则优先级：本地 > 插件 > 远程订阅。
+
+[General]
+ip-mode=v4-only
+ipv6-vif=off
+dns-server=system
+sni-sniffing=true
+disable-stun=true
+dns-reject-mode=LoopbackIP
+domain-reject-mode=DNS
+udp-fallback-mode=REJECT
+wifi-access-http-port=7222
+wifi-access-socks5-port=7221
+allow-wifi-access=false
+interface-mode=auto
+test-timeout=5
+disconnect-on-policy-change=false
+internet-test-url=http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url=http://www.gstatic.com/generate_204
+resource-parser=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url=https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url=https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+skip-proxy=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
+bypass-tun=10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+# 填写实际 SSID 后取消注释
+# ssid-trigger = "YOUR_HOME_WIFI":DIRECT,"cellular":RULE,"default":RULE
+
+[Proxy]
+
+[Remote Proxy]
+# 节点订阅仅允许本地填写。不要将真实 URL / Token 写入公共仓库。
+# https://YOUR_PRIVATE_SUBSCRIPTION_URL,tag=订阅1,enabled=false
+
+[Remote Filter]
+香港节点=NameRegex, FilterKey="^(?=.*((?i)🇭🇰|香港|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+台湾节点=NameRegex, FilterKey="^(?=.*((?i)🇹🇼|台湾|(\b(TW|TWN|Tai|Taiwan)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+日本节点=NameRegex, FilterKey="^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|JPN|Japan)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+韩国节点=NameRegex, FilterKey="^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+新国节点=NameRegex, FilterKey="^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|SGP|Singapore)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+美国节点=NameRegex, FilterKey="^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|USA|United States)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+游戏节点=NameRegex, FilterKey="^(?=.*((?i)游戏|🎮|(\b(GAME)(\d+)?\b)))(?!.*((?i)回国|校园)).*$"
+全球节点=NameRegex, FilterKey="^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|邀请|好友|失联|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
+
+[Proxy Group]
+# --------------------------------
+# 场景策略
+香港手动场景=ssid, default=香港手动策略, cellular=香港手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+台湾手动场景=ssid, default=台湾手动策略, cellular=台湾手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+日本手动场景=ssid, default=日本手动策略, cellular=日本手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+韩国手动场景=ssid, default=韩国手动策略, cellular=韩国手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+新国手动场景=ssid, default=新国手动策略, cellular=新国手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+美国手动场景=ssid, default=美国手动策略, cellular=美国手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+游戏手动场景=ssid, default=游戏手动策略, cellular=游戏手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+全球手动场景=ssid, default=全球手动策略, cellular=全球手动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+香港自动场景=ssid, default=香港自动策略, cellular=香港自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+台湾自动场景=ssid, default=台湾自动策略, cellular=台湾自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+日本自动场景=ssid, default=日本自动策略, cellular=日本自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+韩国自动场景=ssid, default=韩国自动策略, cellular=韩国自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+新国自动场景=ssid, default=新国自动策略, cellular=新国自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+美国自动场景=ssid, default=美国自动策略, cellular=美国自动策略, "YOUR_HOME_WIFI"=DIRECT, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SSID.png
+# --------------------------------
+# 地区策略
+香港手动策略=select, 香港节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+台湾手动策略=select, 台湾节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+日本手动策略=select, 日本节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+韩国手动策略=select, 韩国节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+新国手动策略=select, 新国节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+美国手动策略=select, 美国节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+游戏手动策略=select, 游戏节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/GAME.png
+全球手动策略=select, 全球节点, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+香港自动策略=url-test, 香港节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png
+台湾自动策略=url-test, 台湾节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png
+日本自动策略=url-test, 日本节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png
+韩国自动策略=url-test, 韩国节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png
+新国自动策略=url-test, 新国节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png
+美国自动策略=url-test, 美国节点, interval = 300, tolerance = 150, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/US.png
+
+# --------------------------------
+# 兜底策略后备
+兜底后备策略=fallback, 香港自动场景, 台湾自动场景, 日本自动场景, 韩国自动场景, 新国自动场景, 美国自动场景, interval = 300, max-timeout=2000, img-url=https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
+全球自动策略 = url-test,全球节点,interval = 300,tolerance = 150
+区域选择 = ssid,default=全球自动策略,cellular=全球自动策略,"YOUR_HOME_WIFI"=DIRECT
+常用AI = ssid,default=新国自动策略,cellular=新国自动策略,"YOUR_HOME_WIFI"=DIRECT
+Yandex = ssid,default=美国自动策略,cellular=美国自动策略,"YOUR_HOME_WIFI"=DIRECT
+Linux代理 = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+微软服务 = ssid,default=DIRECT,cellular=DIRECT,"YOUR_HOME_WIFI"=DIRECT
+Edge_New_Tab = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+国外社交媒体 = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+谷歌服务 = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+即时通讯 = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+苹果服务 = ssid,default=DIRECT,cellular=DIRECT,"YOUR_HOME_WIFI"=DIRECT
+国外流媒体 = ssid,default=新国自动策略,cellular=新国自动策略,"YOUR_HOME_WIFI"=DIRECT
+Steam = ssid,default=香港自动策略,cellular=香港自动策略,"YOUR_HOME_WIFI"=DIRECT
+测速工具 = ssid,default=全球自动策略,cellular=全球自动策略,"YOUR_HOME_WIFI"=DIRECT
+非常规端口 = ssid,default=DIRECT,cellular=DIRECT,"YOUR_HOME_WIFI"=DIRECT
+漏网之鱼 = ssid,default=兜底后备策略,cellular=兜底后备策略,"YOUR_HOME_WIFI"=DIRECT
+Emby = ssid,default=DIRECT,cellular=DIRECT,"YOUR_HOME_WIFI"=DIRECT
+成人网站 = ssid,default=全球自动策略,cellular=全球自动策略,"YOUR_HOME_WIFI"=DIRECT
+
+[Rule]
+FINAL,漏网之鱼
+
+[Remote Rule]
+# 优先：自己的 Github 规则与已转换的公开 OpenClash YAML
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/08-LAN.list, policy=DIRECT, tag=08-LAN, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/00-Legacy-Direct.list, policy=DIRECT, tag=00-Legacy-Direct, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/01-Edge-Copilot.list, policy=常用AI, tag=01-Edge-Copilot, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/02-Microsoft-Designer.list, policy=常用AI, tag=02-Microsoft-Designer, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/03-Edge-NewTab.list, policy=Edge_New_Tab, tag=03-Edge-NewTab, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/04-AI-Special.list, policy=常用AI, tag=04-AI-Special, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/05-Linux-Proxy.list, policy=Linux代理, tag=05-Linux-Proxy, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/06-Linux-Direct.list, policy=DIRECT, tag=06-Linux-Direct, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/07-AdGuard-VPN.list, policy=区域选择, tag=07-AdGuard-VPN, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/08-Yandex.list, policy=Yandex, tag=08-Yandex, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Personal/09-Custom-Proxy.list, policy=区域选择, tag=09-Custom-Proxy, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/01-Custom-Direct-Domain.list, policy=DIRECT, tag=01-Custom-Direct-Domain, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/02-Custom-Direct-IP.list, policy=DIRECT, tag=02-Custom-Direct-IP, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/03-Custom-Direct-Port.list, policy=DIRECT, tag=03-Custom-Direct-Port, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/04-Custom-Proxy-Domain.list, policy=区域选择, tag=04-Custom-Proxy-Domain, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/05-Custom-Proxy-IP.list, policy=区域选择, tag=05-Custom-Proxy-IP, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/06-Steam-CDN-Domain.list, policy=DIRECT, tag=06-Steam-CDN-Domain, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/07-Steam-CDN-IP.list, policy=DIRECT, tag=07-Steam-CDN-IP, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/01-GitHub.list, policy=常用AI, tag=01-GitHub, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/02-Google.list, policy=谷歌服务, tag=02-Google, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/03-Telegram.list, policy=即时通讯, tag=03-Telegram, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/04-Apple.list, policy=苹果服务, tag=04-Apple, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/05-Microsoft.list, policy=微软服务, tag=05-Microsoft, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/06-Social.list, policy=国外社交媒体, tag=06-Social, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/07-Streaming.list, policy=国外流媒体, tag=07-Streaming, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Upstream/08-Unusual-Ports.list, policy=非常规端口, tag=08-Unusual-Ports, enabled=true
+https://raw.githubusercontent.com/GGforceP/PersonaloonRuleset/main/Rules/Services/09-CN-GeoIP.list, policy=DIRECT, tag=09-CN-GeoIP, enabled=true
+# 后置：原来启用的可莉分流源。因未取得完整公开数据，保持原链接，未镜像。
+https://rule.kelee.one/Loon/Twitter.lsr, policy=香港自动场景, tag=Kelee01, enabled=true
+https://rule.kelee.one/Loon/SteamCN.lsr, policy=DIRECT, tag=Kelee02, enabled=true
+https://rule.kelee.one/Loon/Steam.lsr, policy=香港自动场景, tag=Kelee03, enabled=true
+https://rule.kelee.one/Loon/OpenAI.lsr, policy=新国自动场景, tag=Kelee04, enabled=true
+https://kelee.one/Tool/Loon/Lsr/SpeedtestChina.lsr, policy=DIRECT, tag=Kelee05, enabled=true
+https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy=美国自动场景, tag=Kelee06, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=新国自动场景, tag=Kelee07, enabled=true
+https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=全球手动场景, tag=Kelee08, enabled=true
+https://rule.kelee.one/Loon/Netflix.lsr, policy=新国手动场景, tag=Kelee09, enabled=true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=Kelee10, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=Kelee11, enabled=true
+
+[Host]
+# 如需家庭 DNS 在本机配置，例如 ssid:YOUR_HOME_WIFI = server:192.168.2.200
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=兜底后备策略, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy=DIRECT, enabled=false
+https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=兜底后备策略, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=兜底后备策略, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=兜底后备策略, enabled=true
+
+[Mitm]
+# MITM 配置与证书仅在本地保存
+hostname =
+ca-p12 =
+ca-passphrase =
+skip-server-cert-verify = false
