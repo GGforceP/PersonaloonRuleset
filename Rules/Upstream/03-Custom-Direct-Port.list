@@ -1,0 +1,5 @@
+# PersonaloonRuleset / Rules/Upstream/03-Custom-Direct-Port.list
+# Attribution: Aethersailor/Custom_OpenClash_Rules, main/rule/Custom_Direct_Classical_Port.yaml
+# Converted from public YAML to Loon syntax. No proxy credentials.
+DEST-PORT,7844
+SRC-PORT,41641
