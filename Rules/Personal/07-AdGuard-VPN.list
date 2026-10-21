@@ -1,0 +1,9 @@
+# PersonaloonRuleset / Rules/Personal/07-AdGuard-VPN.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/AdGuard-!cn.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN-SUFFIX,adguard-vpn.com
+DOMAIN-SUFFIX,adguard-vpn.online
+DOMAIN-SUFFIX,adguardvpn.com
+DOMAIN-SUFFIX,adguard-vpn.cc
+DOMAIN-SUFFIX,adguardvpn-help.info
