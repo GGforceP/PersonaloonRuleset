@@ -1,0 +1,6 @@
+# Original Loon [Rule] IP exceptions; unchanged semantics.
+# These do not come from Mihomo datasets.
+IP-CIDR,28.0.0.1/8
+IP-CIDR,198.18.0.1/16
+IP-CIDR,198.18.0.0/15
+IP-CIDR6,fc00::/18
