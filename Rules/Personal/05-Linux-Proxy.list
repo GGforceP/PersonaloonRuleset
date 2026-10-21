@@ -1,0 +1,28 @@
+# PersonaloonRuleset / Rules/Personal/05-Linux-Proxy.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/Linux-Project@!cn.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN,archive.ubuntu.com
+DOMAIN,security.ubuntu.com
+DOMAIN,ports.ubuntu.com
+DOMAIN,old-releases.ubuntu.com
+DOMAIN,releases.ubuntu.com
+DOMAIN,cdimage.ubuntu.com
+DOMAIN-SUFFIX,launchpadcontent.net
+DOMAIN-SUFFIX,launchpadlibrarian.com
+DOMAIN-SUFFIX,launchpadlibrarian.net
+DOMAIN-SUFFIX,launchpadlibrarian.org
+DOMAIN-SUFFIX,snapcraftcontent.com
+DOMAIN,deb.debian.org
+DOMAIN,security.debian.org
+DOMAIN,ftp.debian.org
+DOMAIN,cdimage.debian.org
+DOMAIN,snapshot.debian.org
+DOMAIN,packages.linuxmint.com
+DOMAIN,dl-cdn.alpinelinux.org
+DOMAIN,cache.nixos.org
+DOMAIN,channels.nixos.org
+DOMAIN-SUFFIX,deepin.io
+DOMAIN-SUFFIX,deepin.org
+DOMAIN-SUFFIX,tails.net
+DOMAIN,puppylinux-woof-ce.github.io
