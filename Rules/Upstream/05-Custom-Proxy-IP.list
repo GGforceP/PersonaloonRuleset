@@ -1,0 +1,4 @@
+# PersonaloonRuleset / Rules/Upstream/05-Custom-Proxy-IP.list
+# Attribution: Aethersailor/Custom_OpenClash_Rules, main/rule/Custom_Proxy_IP.yaml
+# Converted from public YAML to Loon syntax. No proxy credentials.
+IP-CIDR,207.241.224.2/32
