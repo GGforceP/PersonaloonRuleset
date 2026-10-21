@@ -1,0 +1,6 @@
+# PersonaloonRuleset / Rules/Upstream/08-Unusual-Ports.list
+# Attribution: Aethersailor/Custom_OpenClash_Rules, main/rule/Custom_Port_Direct.yaml
+# Converted from public YAML to Loon syntax. No proxy credentials.
+DEST-PORT,1-79
+DEST-PORT,81-442
+DEST-PORT,444-65535
