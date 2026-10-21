@@ -1,0 +1,8 @@
+# PersonaloonRuleset / Rules/Personal/04-AI-Special.list
+# Source: GGforceP/PersonalClashRuleSet dev/Rules/AI-Spc.yaml
+# Public routing rules only; no subscription information.
+# Policy is bound in Loon [Remote Rule], not within this file.
+DOMAIN-SUFFIX,hotaifree.com
+DOMAIN-SUFFIX,tujie.ai
+DOMAIN-SUFFIX,codexradar.com
+DOMAIN-SUFFIX,codex-resets.com
