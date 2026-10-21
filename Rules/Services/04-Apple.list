@@ -1,0 +1,8 @@
+# PersonaloonRuleset / Rules/Services/04-Apple.list
+# Supplemental categories for features originally using Mihomo GEOSITE.
+# Curated seed list, NOT a full replacement for any GEOSITE database.
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,apple-dns.net
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN-SUFFIX,apple-cloudkit.com
